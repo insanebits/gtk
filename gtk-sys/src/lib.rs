@@ -12041,6 +12041,7 @@ extern "C" {
     pub fn cast_GtkRecentInfo(widget: *mut GtkWidget) -> *mut GtkRecentInfo;
     pub fn cast_GtkEditable(widget: *mut GtkWidget) -> *mut GtkEditable;
     pub fn cast_GtkTextView(widget: *mut GtkWidget) -> *mut GtkTextView;
+    pub fn cast_GtkTextIter(widget: *mut GtkWidget) -> *mut GtkTextIter;
     pub fn cast_GtkTextBuffer(widget: *mut GtkWidget) -> *mut GtkTextBuffer;
     pub fn cast_GtkTextTagTable(widget: *mut gobject::GObject) -> *mut GtkTextTagTable;
     pub fn cast_GtkScrolledWindow(widget: *mut GtkWidget) -> *mut GtkScrolledWindow;

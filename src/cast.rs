@@ -368,6 +368,10 @@ pub fn GTK_TEXT_VIEW(widget: *mut ffi::GtkWidget) -> *mut ffi::GtkTextView {
     unsafe { ffi::cast_GtkTextView(widget) }
 }
 
+pub fn GTK_TEXT_ITER(widget: *mut ffi::GtkWidget) -> *mut ffi::GtkTextIter {
+    unsafe { ffi::cast_GtkTextIter(widget) }
+}
+
 pub fn GTK_TEXT_BUFFER(widget: *mut ffi::GtkWidget) -> *mut ffi::GtkTextBuffer {
     unsafe { ffi::cast_GtkTextBuffer(widget) }
 }

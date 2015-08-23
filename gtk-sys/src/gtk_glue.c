@@ -143,6 +143,10 @@ GtkTextTagTable* cast_GtkTextTagTable(void* widget) {
     return GTK_TEXT_TAG_TABLE(widget);
 }
 
+GtkTextIter* cast_GtkTextIter(void* widget) {
+    return GTK_TEXT_ITER(widget);
+}
+
 GtkTextBuffer* cast_GtkTextBuffer(void* widget) {
     return GTK_TEXT_BUFFER(widget);
 }
