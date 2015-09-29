@@ -16,5 +16,4 @@ pub trait TextBufferTrait: ::WidgetTrait {
                 text.len() as i32)
         }
     }
-
 }
