@@ -151,6 +151,8 @@ pub use self::widgets::{
     TreeModel,
     ListStore,
     TreeStore,
+    Menu,
+    MenuBar,
     MenuItem,
     SeparatorMenuItem,
     CheckMenuItem,
@@ -327,7 +329,10 @@ pub use self::traits::FileChooserTrait;
 pub use self::traits::FontChooserTrait;
 pub use self::traits::FrameTrait;
 pub use self::traits::LabelTrait;
+pub use self::traits::MenuTrait;
+pub use self::traits::MenuBarTrait;
 pub use self::traits::MenuItemTrait;
+pub use self::traits::MenuItemSignals;
 pub use self::traits::MenuShellTrait;
 pub use self::traits::MiscTrait;
 pub use self::traits::OrientableTrait;

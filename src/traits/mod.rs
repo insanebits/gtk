@@ -38,6 +38,8 @@ pub use self::editable::EditableTrait;
 pub use self::text_buffer::TextBufferTrait;
 pub use self::scrolled_window::ScrolledWindowTrait;
 pub use self::cell_renderer::CellRendererTrait;
+pub use self::menu::MenuTrait;
+pub use self::menu_bar::MenuBarTrait;
 pub use self::menu_shell::MenuShellTrait;
 pub use self::menu_item::MenuItemTrait;
 pub use self::check_menu_item::CheckMenuItemTrait;
@@ -47,11 +49,13 @@ pub use self::cell_layout::CellLayoutTrait;
 pub use self::combo_box::ComboBoxTrait;
 pub use self::gobject::GObjectTrait;
 
+
 pub use signal::{
     WidgetSignals,
     ButtonSignals,
     ComboBoxSignals,
     ToolButtonSignals,
+    MenuItemSignals,
 };
 
 pub mod style_provider;
@@ -84,7 +88,9 @@ pub mod editable;
 pub mod text_buffer;
 pub mod scrolled_window;
 pub mod cell_renderer;
+pub mod menu;
 pub mod menu_shell;
+pub mod menu_bar;
 pub mod menu_item;
 pub mod check_menu_item;
 pub mod cell_editable;

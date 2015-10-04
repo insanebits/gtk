@@ -52,6 +52,7 @@ use {
     TreeViewColumn,
     Widget,
     WidgetHelpType,
+    MenuItem,
 };
 
 /// Whether to propagate the signal to other handlers
@@ -1341,3 +1342,31 @@ extern "C" fn tree_view_column_trampoline(this: *mut GtkTreeViewColumn,
         f: &Box<Fn(TreeViewColumn) + 'static>) {
     f(TreeViewColumn::wrap_pointer(this))
 }
+
+pub trait MenuItemSignals {
+    fn connect_activate<F: Fn(MenuItem) + 'static>(&self, f: F) -> u64;
+}
+
+mod menu_item {
+    use ffi::GtkMenuItem;
+    use super::into_raw;
+    use MenuItem;
+    use glib::signal::connect;
+    use traits::{FFIWidget, MenuItemTrait};
+    use std::mem::transmute;
+
+    impl <T: FFIWidget + MenuItemTrait> super::MenuItemSignals for T {
+    	fn connect_activate<F: Fn(MenuItem) + 'static>(&self, f: F) -> u64 {
+            unsafe {
+                let f: Box<Box<Fn(MenuItem) + 'static>> = Box::new(Box::new(f));
+                connect(self.unwrap_widget() as *mut _, "activate",
+                    transmute(void_trampoline), into_raw(f) as *mut _)
+            }
+        }
+    }
+    
+    extern "C" fn void_trampoline(this: *mut GtkMenuItem, f: &Box<Fn(MenuItem) + 'static>) {
+        f(FFIWidget::wrap_widget(this as *mut _));
+    }
+}
+

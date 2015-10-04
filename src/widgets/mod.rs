@@ -21,6 +21,8 @@ pub use self::toggle_button::ToggleButton;
 pub use self::check_button::CheckButton;
 pub use self::font_chooser_dialog::FontChooserDialog;
 #[cfg(gtk_3_6)]
+pub use self::menu::Menu;
+pub use self::menu_bar::MenuBar;
 pub use self::menu_button::MenuButton;
 pub use self::color_button::ColorButton;
 pub use self::link_button::LinkButton;
@@ -160,6 +162,8 @@ mod font_button;
 mod toggle_button;
 mod check_button;
 #[cfg(gtk_3_6)]
+mod menu;
+mod menu_bar;
 mod menu_button;
 mod color_button;
 mod link_button;
